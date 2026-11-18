@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEWS ARENA | أخبار الكرة والعالم</title>
+<style>
+:root{--bg:#0b1220;--panel:#111c2f;--panel2:#17243a;--text:#f3f6fb;--muted:#a8b4c7;--accent:#26d7a0;--line:#26354c;--red:#ff5b68}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+header{background:#0e192b;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 0;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:900;letter-spacing:.5px}.logo span{color:var(--accent)}
+nav{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:14px}nav a:hover,.active{color:var(--accent)}
+.search{display:flex;gap:8px}.search input{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:white;width:190px;outline:none}
+button{cursor:pointer;border:0;border-radius:9px;padding:10px 15px;background:var(--accent);color:#07150f;font-weight:800}
+.ticker{background:#13233a;border-bottom:1px solid var(--line)}.ticker .wrap{display:flex;gap:14px;align-items:center;padding:9px 0;font-size:13px}.live{color:#fff;background:var(--red);border-radius:5px;padding:2px 8px;font-weight:bold}
+.hero{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;padding:28px 0}
+.feature{min-height:340px;border-radius:18px;padding:26px;display:flex;flex-direction:column;justify-content:end;background:linear-gradient(0deg,rgba(3,9,18,.96),rgba(3,9,18,.05)),linear-gradient(135deg,#176b63,#203b68 55%,#6b3d55);border:1px solid var(--line)}
+.tag{display:inline-block;background:var(--accent);color:#062017;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:bold;width:max-content}
+.feature h1{font-size:clamp(25px,4vw,40px);line-height:1.3;margin:13px 0}.muted{color:var(--muted);font-size:13px}
+.side{display:grid;gap:14px}.mini{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:18px;display:flex;flex-direction:column;justify-content:center;min-height:155px}
+.mini h3{margin:8px 0;font-size:18px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:18px 0 14px}.section-head h2{margin:0;font-size:23px}.section-head small{color:var(--muted)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.filters button{background:var(--panel2);color:var(--muted);border:1px solid var(--line)}.filters button.selected{background:var(--accent);color:#062017;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:34px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#3d6b70}
+.thumb{height:135px;display:grid;place-items:center;font-size:45px;background:linear-gradient(135deg,#1b4052,#24304d)}
+.cardbody{padding:15px}.card h3{font-size:17px;line-height:1.5;margin:8px 0}.card p{font-size:13px;color:var(--muted);margin:0 0 12px}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+.scoreboard{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:35px}.match{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px;text-align:center}.teams{font-weight:bold;margin:8px 0}.score{font-size:22px;color:var(--accent);font-weight:900}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:13px;margin-top:30px}
+.empty{display:none;color:var(--muted);padding:20px;text-align:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.scoreboard{grid-template-columns:1fr 1fr}.search input{width:145px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.top{align-items:flex-start}.logo{width:100%}.scoreboard{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap top">
+  <a class="logo" href="#">NEWS <span>ARENA</span></a>
+  <nav><a href="#home" class="active">الرئيسية</a><a href="#football">كرة القدم</a><a href="#world">أخبار العالم</a><a href="#matches">المباريات</a></nav>
+  <div class="search"><input id="search" placeholder="ابحث في الأخبار..."><button id="searchBtn">بحث</button></div>
+</div></header>
+<div class="ticker"><div class="wrap"><span class="live">عاجل</span><span>تابع آخر الأخبار الرياضية والعالمية من مكان واحد</span></div></div>
+<main class="wrap" id="home">
+<section class="hero">
+ <article class="feature"><span class="tag">الخبر الرئيسي</span><h1>كل أخبار الكرة والعالم في واجهة واحدة</h1><p>مساحة مخصصة لأهم العناوين والتحليلات والتغطيات اليومية.</p><span class="muted">NEWS ARENA · تغطية مستمرة</span></article>
+ <div class="side">
+  <article class="mini"><span class="tag">كرة القدم</span><h3>أخبار الأندية والمنتخبات والانتقالات</h3><span class="muted">تابع المستجدات من الملاعب المحلية والعالمية</span></article>
+  <article class="mini"><span class="tag">العالم</span><h3>سياسة واقتصاد وتكنولوجيا</h3><span class="muted">أبرز الأحداث الدولية في ملخص واضح</span></article>
+ </div>
+</section>
+<section id="football">
+ <div class="section-head"><h2>أخبار كرة القدم</h2><small>اختر القسم لعرض الأخبار</small></div>
+ <div class="filters"><button class="selected" data-filter="all">الكل</button><button data-filter="football">كرة القدم</button><button data-filter="world">العالم</button><button data-filter="tech">تكنولوجيا</button></div>
+ <div class="grid" id="newsGrid">
+  <article class="card" data-category="football"><div class="thumb">⚽</div><div class="cardbody"><span class="tag">كرة القدم</span><h3>متابعة أخبار الدوري المصري والأندية</h3><p>مساحة لعرض أخبار الأهلي والزمالك وباقي أندية الدوري.</p><div class="meta"><span>قسم الرياضة</span><span>اقرأ المزيد قريباً</span></div></div></article>
+  <article class="card" data-category="football"><div class="thumb">🏆</div><div class="cardbody"><span class="tag">عالمي</span><h3>أخبار الدوريات الأوروبية والبطولات الكبرى</h3><p>تغطية لأبرز المنافسات والنتائج وأخبار الفرق.</p><div class="meta"><span>كرة عالمية</span><span>اقرأ المزيد قريباً</span></div></div></article>
+  <article class="card" data-category="football"><div class="thumb">🔁</div><div class="cardbody"><span class="tag">انتقالات</span><h3>سوق الانتقالات وصفقات اللاعبين</h3><p>متابعة أخبار الانتقالات والتجديدات الرسمية.</p><div class="meta"><span>ميركاتو</span><span>اقرأ المزيد قريباً</span></div></div></article>
+  <article class="card" data-category="world"><div class="thumb">🌍</div><div class="cardbody"><span class="tag">العالم</span><h3>أهم الأحداث والأخبار الدولية</h3><p>ملخصات للأحداث العالمية من مصادر صحفية موثوقة.</p><div class="meta"><span>أخبار العالم</span><span>اقرأ المزيد قريباً</span></div></div></article>
+  <article class="card" data-category="world"><div class="thumb">📈</div><div class="cardbody"><span class="tag">اقتصاد</span><h3>أخبار الاقتصاد والأسواق</h3><p>متابعة التطورات الاقتصادية وتأثيرها حول العالم.</p><div class="meta"><span>اقتصاد</span><span>اقرأ المزيد قريباً</span></div></div></article>
+  <article class="card" data-category="tech"><div class="thumb">💻</div><div class="cardbody"><span class="tag">تكنولوجيا</span><h3>أحدث أخبار التقنية والذكاء الاصطناعي</h3><p>تحديثات التقنية والابتكارات الرقمية.</p><div class="meta"><span>تكنولوجيا</span><span>اقرأ المزيد قريباً</span></div></div></article>
+ </div><div class="empty" id="empty">لا توجد نتائج مطابقة لبحثك.</div>
+</section>
+<section id="matches">
+ <div class="section-head"><h2>لوحة المباريات</h2><small>نموذج عرض — ليست نتائج مباشرة</small></div>
+ <div class="scoreboard">
+  <div class="match"><span class="muted">الدوري المصري</span><div class="teams">الأهلي　 ×　 الزمالك</div><div class="score">VS</div><span class="muted">موعد المباراة يضاف هنا</span></div>
+  <div class="match"><span class="muted">الدوري الإنجليزي</span><div class="teams">ليفربول　 ×　 أرسنال</div><div class="score">VS</div><span class="muted">موعد المباراة يضاف هنا</span></div>
+  <div class="match"><span class="muted">الدوري الإسباني</span><div class="teams">ريال مدريد　 ×　 برشلونة</div><div class="score">VS</div><span class="muted">موعد المباراة يضاف هنا</span></div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap">© 2026 NEWS ARENA — واجهة تجريبية قابلة للتطوير. الأخبار والنتائج هنا أمثلة وليست تحديثات مباشرة.</div></footer>
+<script>
+const buttons=[...document.querySelectorAll('[data-filter]')], cards=[...document.querySelectorAll('.card')], search=document.getElementById('search'), empty=document.getElementById('empty');
+let category='all';
+function update(){let q=search.value.trim().toLowerCase(),shown=0;cards.forEach(c=>{let ok=(category==='all'||c.dataset.category===category)&&c.innerText.toLowerCase().includes(q);c.style.display=ok?'':'none';if(ok)shown++});empty.style.display=shown?'none':'block'}
+buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.classList.remove('selected'));b.classList.add('selected');category=b.dataset.filter;update()}));
+document.getElementById('searchBtn').addEventListener('click',update);search.addEventListener('input',update);
+</script>
+</body></html>
